@@ -8,6 +8,7 @@ Na imagem abaixo aparecem 3 telas com o CMD aberto(cada tela representa um compu
 <img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20identifica%C3%A7%C3%A3o/Imagens/Captura%20de%20tela%20de%202018-12-29%2015-06-31.png" alt="Testando Sistema"><br>
 <br>
 Logo abaixo está a imagem das tentativas de acesso Arquivadas.
+<img
 src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20identifica%C3%A7%C3%A3o/Imagens/Captura%20de%20tela%20de%202018-12-29%2015-25-58.png" alt="Tentativas de Acesso"><br>
 
 
