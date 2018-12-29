@@ -3,7 +3,8 @@ Trabalhos desenvolvidos no decorrer do curso
 
 ### Redes<br>
 
-Sistema de Identificação de porta utilizando Socket.<br>
+Sistema de controle de acesso utilizando Socket.<br>
+ <a href="https://github.com/andreasjose/Curriculum/tree/master/Sistema%20de%20identifica%C3%A7%C3%A3o">Sobre</a>
 
 Jogo da Velha Utilizando Socket.<br>
 
