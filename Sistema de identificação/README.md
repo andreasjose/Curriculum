@@ -1,4 +1,4 @@
-# TRABALHO:  Sistema de identificação
+# TRABALHO:  Sistema de controle de acesso
 Trabalho desenvolvido durante a disciplina de Redes
 
 ### Descrição<br>
@@ -14,11 +14,9 @@ src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20identi
 
 ### Codigos<br>
 <a href="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20identifica%C3%A7%C3%A3o/Codigos%2C%20cadastros%20e%20registro%20de%20tentativas%20de%20login/servidor.c">Servidor</a><br>
-<br>
 
 <a href="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20identifica%C3%A7%C3%A3o/Codigos%2C%20cadastros%20e%20registro%20de%20tentativas%20de%20login/cliente.c">Cliente</a><br>
 
-<br>
 <a href="https://github.com/andreasjose/Curriculum/tree/master/Sistema%20de%20identifica%C3%A7%C3%A3o/Codigos%2C%20cadastros%20e%20registro%20de%20tentativas%20de%20login?raw=true">Codigo para teste</a>
 <br>
 <a href="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20identifica%C3%A7%C3%A3o/Tutorial.txt">Tutorial resumido para teste</a><br>
