@@ -1,4 +1,4 @@
-Autores: Daniel Comerio e Andreas José Alves Hermes
+Autor: Andreas José Alves Hermes
 
 Codigo para compilar o servidor
 gcc -std=c99 -o servidor.bin servidor.c
@@ -12,16 +12,17 @@ gcc -std=c99 -o cliente.bin cliente.c
 Codigo para executar o cliente
 ./cliente.bin X
 
-Obs.: X é o número da porta que o heroi deseja acessar.
+Obs.: X é o número da porta que o usuario deseja acessar.
 
 O Servidor ira gerar um arquivo de registro chamado dados.txt
 nele aparece
 Ex:
 25/Sep/2018 - 17:19:03, p5, 1458, Autorizado
 
-Sobre o arquivo com os acessos
-Precisei colocar a quantidade nele
+Sobre o arquivo com os usuarios cadastrados
 o nome dele é cadastros.txt
+nele está arquivado os usuarios da seguinte forma:
+Codigo, Nome, Número de acesso.
 Ex:
 1458,Tony Stark, 5
 4287,Steve Rogers, 4
@@ -29,11 +30,6 @@ Ex:
 6528,Natasha Romanoff, 3
 7458,Bruce Banner, 1
 
-Obs.: O 5 é o numero de herois cadastrados
-      No exemplo que foi apresentado tem um espaço depois da primeira virgula.
-      Não coloca esse espaço se não ele capitura o espaço no começo do nome.
-      deixa exatamente como está codico,nome, porta.
-      coloquei o arquivo com os herois cadastrados.
-      sem esse aquivo com os herois cadastrados não funciona o programa.
+Quanto maior o número de acesso mais portas o usuario podera entrar.
 
-
+quem não tiver cadastrado no sistema não podera entrar.
