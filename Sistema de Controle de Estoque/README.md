@@ -17,5 +17,5 @@ O modelo fisico foi gerado em cima do modelo logico, e foram apricadas algumas a
 
 Por fim algumas intâncias foram adicionadas ao banco, nas tabelas funcionario, produto, descrição do produto e categoria.<br>
 <a href="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/InsertsTabelas.sql">Instâncias</a><br>
-<hr><br>
+<hr>
 <a href="https://github.com/andreasjose/Curriculum/blob/master/README.md">Retorna</a>
