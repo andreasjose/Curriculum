@@ -5,18 +5,18 @@
  */
 package model.dao;
 
-import sistemacontroleestoque.Categoria;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Ignore;
+import sistemacontroleestoque.Descricaoproduto;
 
 /**
  *
  * @author usuario
  */
-public class CategoriaDAOTest {
+public class DescricaoprodutoDAOTest {
     
-    public CategoriaDAOTest() {
+    public DescricaoprodutoDAOTest() {
     }
 
     @Test
@@ -24,10 +24,10 @@ public class CategoriaDAOTest {
     public void inserir()
     {
         
-        Categoria cat = new Categoria("Roupas");
-        CategoriaDAO dao = new CategoriaDAO();
+        Descricaoproduto desc = new Descricaoproduto("Roupas");
+        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
         
-        if(dao.save(cat))
+        if(dao.save(desc))
         {
             System.out.println("Salvo com sucesso");
         }
@@ -38,14 +38,14 @@ public class CategoriaDAOTest {
     }
     
     @Test
-    @Ignore
+    //@Ignore
     public void listar()
     {
-        CategoriaDAO dao = new CategoriaDAO();
+        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
         
-        for(Categoria c : dao.Select())
+        for(Descricaoproduto c : dao.Select())
         {
-            System.out.println("ID: " + c.getId() + " Descrição: " + c.getDescricao());
+            System.out.println("ID: "+ c.getId() +" Descrição: " + c.getDescricao());
         }
     }
     
@@ -54,11 +54,11 @@ public class CategoriaDAOTest {
     public void atualizar()
     {
         
-        Categoria cat = new Categoria("Roupa");
-        cat.setId(1);
-        CategoriaDAO dao = new CategoriaDAO();
+        Descricaoproduto desc = new Descricaoproduto("Roupa");
+        desc.setId(15);
+        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
         
-        if(dao.update(cat))
+        if(dao.update(desc))
         {
             System.out.println("Atualizado com sucesso");
         }
@@ -73,11 +73,11 @@ public class CategoriaDAOTest {
     public void delete()
     {
         
-        Categoria cat = new Categoria("Roupa");
-        cat.setId(1);
-        CategoriaDAO dao = new CategoriaDAO();
+        Descricaoproduto desc = new Descricaoproduto("Roupa");
+        desc.setId(15);
+        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
         
-        if(dao.delete(cat))
+        if(dao.delete(desc))
         {
             System.out.println("Deletado com sucesso");
         }
@@ -86,6 +86,4 @@ public class CategoriaDAOTest {
             fail("Erro ao Deletar");
         }
     }
-    
 }
-

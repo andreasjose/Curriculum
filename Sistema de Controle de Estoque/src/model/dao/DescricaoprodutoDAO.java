@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model.dao;
 
 import Connection.ConnectionFactory;
@@ -9,36 +14,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sistemacontroleestoque.Categoria;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import sistemacontroleestoque.Descricaoproduto;
 
 /**
  *
  * @author usuario
  */
-public class CategoriaDAO {
-    
+public class DescricaoprodutoDAO {
+ 
     private Connection con = null;
     
-    public CategoriaDAO()
+    public DescricaoprodutoDAO()
     {
         con = ConnectionFactory.getConnection();
     }
     
-    public boolean save(Categoria categoria)
+    public boolean save(Descricaoproduto descricao)
     {
-        String sql = "insert into categoria(descricao) values (?)";
+        String sql = "insert into descricaoproduto(descricao) values (?)";
         
         PreparedStatement stmt = null;
         
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, categoria.getDescricao());
+            stmt.setString(1, descricao.getDescricao());
             stmt.executeUpdate();
             return true;
         }
@@ -53,14 +52,14 @@ public class CategoriaDAO {
         }   
     }
     
-    public List<Categoria> Select()
+    public List<Descricaoproduto> Select()
     {
-        String sql = "SELECT * FROM categoria;";
+        String sql = "SELECT * FROM descricaoproduto;";
         
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
-        List<Categoria> categorias = new ArrayList<>();
+        List<Descricaoproduto> descricaos = new ArrayList<>();
         
         try {
             
@@ -69,10 +68,10 @@ public class CategoriaDAO {
             
             while (rs.next())
             {
-                Categoria categoria = new Categoria();
-                categoria.setDescricao(rs.getString("descricao"));
-                categoria.setId(rs.getInt("id"));
-                categorias.add(categoria);
+                Descricaoproduto descricao = new Descricaoproduto();
+                descricao.setDescricao(rs.getString("descricao"));
+                descricao.setId(rs.getInt("id"));
+                descricaos.add(descricao);
             }
         }
         catch (SQLException ex)
@@ -84,19 +83,19 @@ public class CategoriaDAO {
             ConnectionFactory.closeconnection(con, stmt, rs);
         }
         
-        return categorias;
+        return descricaos;
     }
     
-    public boolean update(Categoria categoria)
+    public boolean update(Descricaoproduto descricao)
     {
-        String sql = "UPDATE categoria SET descricao = ? where id = ?";
+        String sql = "UPDATE descricaoproduto SET descricao = ? where id = ?";
         
         PreparedStatement stmt = null;
         
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, categoria.getDescricao());
-            stmt.setInt(2, categoria.getId());
+            stmt.setString(1, descricao.getDescricao());
+            stmt.setInt(2, descricao.getId());
             stmt.executeUpdate();
             return true;
         }
@@ -111,15 +110,15 @@ public class CategoriaDAO {
         }   
     }
     
-    public boolean delete(Categoria categoria)
+    public boolean delete(Descricaoproduto descricao)
     {
-        String sql = "DELETE FROM categoria where id = ?";
+        String sql = "DELETE FROM descricaoproduto where id = ?";
         
         PreparedStatement stmt = null;
         
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setInt(1, categoria.getId());
+            stmt.setInt(1, descricao.getId());
             stmt.executeUpdate();
             return true;
         }
