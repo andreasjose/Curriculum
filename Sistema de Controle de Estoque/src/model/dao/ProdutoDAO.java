@@ -151,7 +151,7 @@ public class ProdutoDAO {
         return produtos;
     }
     
-    /*public boolean delete(Produto produto)
+    public boolean delete(Produto produto)
     {
         String sql = "DELETE FROM produto where id = ?";
         
@@ -172,7 +172,7 @@ public class ProdutoDAO {
         {
             ConnectionFactory.closeconnection(con, stmt);
         }   
-    }*/
+    }
     
     
 }

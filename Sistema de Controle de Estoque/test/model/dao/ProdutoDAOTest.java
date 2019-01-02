@@ -54,23 +54,29 @@ public class ProdutoDAOTest {
             fail("Erro ao Salvar");
         }
     }
-    /*
+    
     @Test
     @Ignore
     public void atualizar()
     {
         Categoria cat = new Categoria();
-        cat.setId(1);
+        cat.setId(5);
+        
+        Descricaoproduto desc = new Descricaoproduto();
+        desc.setId(12);
         
         Produto pro = new Produto();
         ProdutoDAO dao = new ProdutoDAO();
         
-        pro.setQtd(200);
-        pro.setValor(150.00);
-        pro.setDescricao("Vestido Rosa");
-        pro.setCategoria(cat);
+        pro.setQuantidadeestoque(200);
+        pro.setQuantidadecomprada(200);
+        pro.setPrecocompra((float) 7.5);
+        pro.setPrecovenda((float) 8.5);
+        pro.setDatavalidade("2019-04-10");
         
-        pro.setId(1);
+        pro.setDescricao(desc);
+        pro.setCategoria(cat);
+        pro.setId(16);
         
         if(dao.update(pro))
         {
@@ -81,10 +87,10 @@ public class ProdutoDAOTest {
             fail("Erro ao Salvar");
         }
     }
-    */
+    
     
     @Test
-    //@Ignore
+    @Ignore
     public void listar()
     {
         ProdutoDAO dao = new ProdutoDAO();
@@ -97,14 +103,14 @@ public class ProdutoDAOTest {
         }
     }
     
-    /*
+    
     @Test
     @Ignore
     public void delete()
     {
         
         Produto pro = new Produto();
-        pro.setId(1);
+        pro.setId(14);
         ProdutoDAO dao = new ProdutoDAO();
         
         if(dao.delete(pro))
@@ -116,5 +122,4 @@ public class ProdutoDAOTest {
             fail("Erro ao Deletar");
         }
     }
-    */
 }
