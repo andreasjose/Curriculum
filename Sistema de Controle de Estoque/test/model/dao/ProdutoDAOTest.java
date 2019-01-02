@@ -5,11 +5,13 @@
  */
 package model.dao;
 
+
 import sistemacontroleestoque.Categoria;
 import sistemacontroleestoque.Produto;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Ignore;
+import sistemacontroleestoque.Descricaoproduto;
 
 /**
  *
@@ -25,14 +27,21 @@ public class ProdutoDAOTest {
     public void inserir()
     {
         Categoria cat = new Categoria();
-        cat.setId(1);
+        cat.setId(5);
+        
+        Descricaoproduto desc = new Descricaoproduto();
+        desc.setId(12);
         
         Produto pro = new Produto();
         ProdutoDAO dao = new ProdutoDAO();
         
-        pro.setQtd(200);
-        pro.setValor(150.00);
-        pro.setDescricao("Vestido");
+        pro.setQuantidadeestoque(200);
+        pro.setQuantidadecomprada(200);
+        pro.setPrecocompra((float) 7.5);
+        pro.setPrecovenda((float) 8.5);
+        pro.setDatavalidade("2019-04-10");
+        
+        pro.setDescricao(desc);
         pro.setCategoria(cat);
         
         
@@ -45,6 +54,7 @@ public class ProdutoDAOTest {
             fail("Erro ao Salvar");
         }
     }
+    /*
     @Test
     @Ignore
     public void atualizar()
@@ -71,19 +81,23 @@ public class ProdutoDAOTest {
             fail("Erro ao Salvar");
         }
     }
+    */
     
     @Test
-    @Ignore
+    //@Ignore
     public void listar()
     {
         ProdutoDAO dao = new ProdutoDAO();
         
         for(Produto p : dao.Select())
         {
-            System.out.println("Produto: " + p.getDescricao() + " Quantidade: " + p.getQtd() + " Valor: " + p.getValor() + " Categoria: " + p.getCategoria().getDescricao());
+            System.out.println("Produto: " + p.getDescricao().getDescricao()+ " Quantidade Estoque: " + p.getQuantidadeestoque()+ 
+                    " Quantidade Comprada: " + p.getQuantidadecomprada() + " Valor de Compra: " + p.getPrecocompra()+
+                    " Valor de Venda: "+ p.getPrecovenda()+" Categoria: " + p.getCategoria().getDescricao());
         }
     }
     
+    /*
     @Test
     @Ignore
     public void delete()
@@ -102,4 +116,5 @@ public class ProdutoDAOTest {
             fail("Erro ao Deletar");
         }
     }
+    */
 }

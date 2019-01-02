@@ -5,6 +5,8 @@
  */
 package sistemacontroleestoque;
 
+import java.util.Date;
+
  /*
  *
  * @author Andreas
@@ -12,24 +14,69 @@ package sistemacontroleestoque;
 
 public class Produto {
     private int id;
-    private String descricao;
-    private int qtd;
-    private double valor;
+    private Descricaoproduto descricao;
+    private int quantidadeestoque;
+    private int quantidadecomprada;
+    private float precovenda;
+    private float precocompra;
+    private String datavalidade;
     private Categoria categoria;
 
     public Produto()
     {
     
     }
-    
-    public Produto(String descricao, int qtd, double valor, Categoria categoria) {
+
+    public Produto(Descricaoproduto descricao, int quantidadecomprada, float precocompra, float precovenda, Categoria categoria, String datavalidade) {
         this.descricao = descricao;
-        this.qtd = qtd;
-        this.valor = valor;
+        this.quantidadeestoque = quantidadecomprada;
+        this.quantidadeestoque = quantidadecomprada;
+        this.precovenda = precovenda;
+        this.precocompra = precocompra;
+        this.datavalidade = datavalidade;
         this.categoria = categoria;
     }
 
     
+    public int getQuantidadeestoque() {
+        return quantidadeestoque;
+    }
+
+    public void setQuantidadeestoque(int quantidadeestoque) {
+        this.quantidadeestoque = quantidadeestoque;
+    }
+
+    public int getQuantidadecomprada() {
+        return quantidadecomprada;
+    }
+
+    public void setQuantidadecomprada(int quantidadecomprada) {
+        this.quantidadecomprada = quantidadecomprada;
+    }
+
+    public float getPrecovenda() {
+        return precovenda;
+    }
+
+    public void setPrecovenda(float precovenda) {
+        this.precovenda = precovenda;
+    }
+
+    public float getPrecocompra() {
+        return precocompra;
+    }
+
+    public void setPrecocompra(float precocompra) {
+        this.precocompra = precocompra;
+    }
+
+    public String getDatavalidade() {
+        return datavalidade;
+    }
+
+    public void setDatavalidade(String datavalidade) {
+        this.datavalidade = datavalidade;
+    }
     
     public int getId() {
         return id;
@@ -39,28 +86,12 @@ public class Produto {
         this.id = id;
     }
 
-    public String getDescricao() {
+    public Descricaoproduto getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(Descricaoproduto descricao) {
         this.descricao = descricao;
-    }
-
-    public int getQtd() {
-        return qtd;
-    }
-
-    public void setQtd(int qtd) {
-        this.qtd = qtd;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
     }
 
     public Categoria getCategoria() {

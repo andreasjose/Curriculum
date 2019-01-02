@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sistemacontroleestoque.Categoria;
+import sistemacontroleestoque.Descricaoproduto;
 import sistemacontroleestoque.Produto;
 
 /**
@@ -32,15 +33,19 @@ public class ProdutoDAO {
     
     public boolean save(Produto produto)
     {
-        String sql = "insert into produto(descricao, categoria_id, qtd, valor) values (?, ?, ?, ?)";
+        String sql = "insert into produto(descricaoproduto_id, quantidadeestoque, quantidadecomprada,"
+                + "precocompra, precovenda, datavalidade, categoria_id) values (?, ?, ?, ?, ?, ?, ?)";
         
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, produto.getDescricao());
-            stmt.setInt(2, produto.getCategoria().getId());
-            stmt.setInt(3, produto.getQtd());
-            stmt.setDouble(4, produto.getValor());
+            stmt.setInt(1, produto.getDescricao().getId());
+            stmt.setInt(2, produto.getQuantidadeestoque());
+            stmt.setInt(3, produto.getQuantidadecomprada());
+            stmt.setFloat(4, produto.getPrecocompra());
+            stmt.setFloat(5, produto.getPrecovenda());
+            stmt.setString(6, produto.getDatavalidade());
+            stmt.setInt(7, produto.getCategoria().getId());
             stmt.executeUpdate();
             return true;
         }
@@ -58,17 +63,22 @@ public class ProdutoDAO {
     
     public boolean update(Produto produto)
     {
-        String sql = "update produto set descricao = ?, categoria_id = ?, qtd = ?, valor = ? where id = ?";
+        String sql = "update produto set descricaoproduto_id = ?, categoria_id = ?, \n" +
+        "quantidadeestoque = ?, quantidadecomprada = ?, precocompra = ?,\n" +
+        "precovenda = ?, datavalidade = ? where id = ?;";
         
         PreparedStatement stmt = null;
         
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, produto.getDescricao());
+            stmt.setInt(1, produto.getDescricao().getId());
             stmt.setInt(2, produto.getCategoria().getId());
-            stmt.setInt(3, produto.getQtd());
-            stmt.setDouble(4, produto.getValor());
-            stmt.setInt(5, produto.getId());
+            stmt.setInt(3, produto.getQuantidadeestoque());
+            stmt.setInt(4, produto.getQuantidadecomprada());
+            stmt.setFloat(5, produto.getPrecocompra());
+            stmt.setFloat(6, produto.getPrecovenda());
+            stmt.setString(7, produto.getDatavalidade());
+            stmt.setInt(8, produto.getId());
             stmt.executeUpdate();
             return true;
         }
@@ -84,9 +94,15 @@ public class ProdutoDAO {
         }   
     }
     
+    
     public List<Produto> Select()
     {
-        String sql = "select p.id as pid, p.descricao as pdescricao, p.qtd, p.valor, p.categoria_id, c.id as cid, c.descricao as cdescricao from produto p inner join categoria c on p.categoria_id = c.id;";
+        String sql = "select p.id as pid, p.quantidadecomprada, p.quantidadeestoque, p.precocompra,\n" +
+        "p.precovenda, p.categoria_id, p.descricaoproduto_id ,c.id as cid, c.descricao \n" +
+        "as cdescricao, p.datavalidade, d.id as did, d.descricao as ddescricao \n" +
+        "from produto p \n" +
+        "inner join categoria c on p.categoria_id = c.id\n" +
+        "inner join descricaoproduto d on p.descricaoproduto_id= d.id;";
         
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -102,9 +118,17 @@ public class ProdutoDAO {
             {
                 Produto produto = new Produto();
                 produto.setId(rs.getInt("pid"));
-                produto.setDescricao(rs.getString("pdescricao"));
-                produto.setQtd(rs.getInt("qtd"));
-                produto.setValor(rs.getInt("valor"));
+                produto.setQuantidadecomprada(rs.getInt("quantidadecomprada"));
+                produto.setQuantidadeestoque(rs.getInt("quantidadeestoque"));
+                produto.setPrecocompra(rs.getFloat("precocompra"));
+                produto.setPrecovenda(rs.getFloat("precovenda"));
+                produto.setDatavalidade(rs.getString("datavalidade"));
+                
+                Descricaoproduto desc = new Descricaoproduto();
+                desc.setId(rs.getInt("did"));
+                desc.setDescricao(rs.getString("ddescricao"));
+                
+                produto.setDescricao(desc);
                 
                 Categoria categoria = new Categoria();
                 categoria.setId(rs.getInt("cid"));
@@ -127,7 +151,7 @@ public class ProdutoDAO {
         return produtos;
     }
     
-    public boolean delete(Produto produto)
+    /*public boolean delete(Produto produto)
     {
         String sql = "DELETE FROM produto where id = ?";
         
@@ -148,7 +172,7 @@ public class ProdutoDAO {
         {
             ConnectionFactory.closeconnection(con, stmt);
         }   
-    }
+    }*/
     
     
 }
