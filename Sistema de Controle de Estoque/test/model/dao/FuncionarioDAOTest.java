@@ -8,15 +8,15 @@ package model.dao;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Ignore;
-import sistemacontroleestoque.Descricaoproduto;
+import sistemacontroleestoque.Funcionario;
 
 /**
  *
  * @author usuario
  */
-public class DescricaoprodutoDAOTest {
+public class FuncionarioDAOTest {
     
-    public DescricaoprodutoDAOTest() {
+    public FuncionarioDAOTest() {
     }
 
     @Test
@@ -24,10 +24,13 @@ public class DescricaoprodutoDAOTest {
     public void inserir()
     {
         
-        Descricaoproduto desc = new Descricaoproduto("Roupas");
-        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
+        Funcionario func = new Funcionario();
+        func.setNome("Andreas");
+        func.setLogin("Andreasj");
+        func.setSenha("123");
+        FuncionarioDAO dao = new FuncionarioDAO();
         
-        if(dao.save(desc))
+        if(dao.save(func))
         {
             System.out.println("Salvo com sucesso");
         }
@@ -41,24 +44,28 @@ public class DescricaoprodutoDAOTest {
     @Ignore
     public void listar()
     {
-        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
+        FuncionarioDAO fun = new FuncionarioDAO();
         
-        for(Descricaoproduto c : dao.Select())
+        for(Funcionario f : fun.Select())
         {
-            System.out.println("ID: "+ c.getId() +" Descrição: " + c.getDescricao());
+            System.out.println("ID: "+ f.getId() +" Nome: " + f.getNome() + " Login: " + f.getLogin() + " Senha: " + f.getSenha());
         }
     }
     
+        
     @Test
     @Ignore
     public void atualizar()
     {
         
-        Descricaoproduto desc = new Descricaoproduto("Roupa");
-        desc.setId(15);
-        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
+        Funcionario func = new Funcionario();
+        func.setNome("Andreas José");
+        func.setLogin("AndreasJo");
+        func.setSenha("1234");
+        func.setId(6);
+        FuncionarioDAO dao = new FuncionarioDAO();
         
-        if(dao.update(desc))
+        if(dao.update(func))
         {
             System.out.println("Atualizado com sucesso");
         }
@@ -73,11 +80,11 @@ public class DescricaoprodutoDAOTest {
     public void delete()
     {
         
-        Descricaoproduto desc = new Descricaoproduto("Roupa");
-        desc.setId(15);
-        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
+        Funcionario func = new Funcionario();
+        func.setId(6);
+        FuncionarioDAO dao = new FuncionarioDAO();
         
-        if(dao.delete(desc))
+        if(dao.delete(func))
         {
             System.out.println("Deletado com sucesso");
         }
