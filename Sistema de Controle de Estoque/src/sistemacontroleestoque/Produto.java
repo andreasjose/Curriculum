@@ -5,8 +5,6 @@
  */
 package sistemacontroleestoque;
 
-import java.util.Date;
-
  /*
  *
  * @author Andreas
