@@ -13,8 +13,9 @@ O modelo logico do banco de dados foi desenvolvido em cima do diagrama de classe
 <img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/modeloLogico.png" alt="Modelo Logico"></img><br>
 <br>
 O modelo fisico foi gerado em cima do modelo logico, e foram apricadas algumas alterações nele resultando em:<br>
-<a href=”https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/modeloFisico.sql”>Modelo Fisico</a><br>
+<a href="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/modeloFisico.sql">Modelo Fisico</a><br>
 
 Por fim algumas intâncias foram adicionadas ao banco, nas tabelas funcionario, produto, descrição do produto e categoria.<br>
-<a href=”https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/InsertsTabelas.sql”>Instâncias</a><br>
-<a href=”https://github.com/andreasjose/Curriculum/blob/master/README.md”>Retorna</a>
+<a href="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/InsertsTabelas.sql">Instâncias</a><br>
+<hr><br>
+<a href="https://github.com/andreasjose/Curriculum/blob/master/README.md">Retorna</a>
