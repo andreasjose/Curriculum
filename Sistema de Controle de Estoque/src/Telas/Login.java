@@ -62,6 +62,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         jButton2.setText("Sair");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -141,11 +146,16 @@ public class Login extends javax.swing.JFrame {
                 i = 1;
                 if(f.getSenha().equals(senha))
                 {
-                    JOptionPane.showMessageDialog(rootPane, "Bem vindo! " + f.getNome());
+                    Menuprincipal menu = new Menuprincipal(f.getNome());
+                    
+                    menu.setVisible(true);
+                    this.setVisible(false);
+                    break;
                 }
                 else
                 {
                     JOptionPane.showMessageDialog(rootPane, "Senha incorreta");
+                    break;
                 }
             }
         }
@@ -156,6 +166,10 @@ public class Login extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
