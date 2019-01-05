@@ -90,6 +90,43 @@ public class FuncionarioDAO {
         return funcionarios;
     }
     
+    public List<Funcionario> Select(String ID)
+    {
+        
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String sql = "SELECT * FROM funcionario where id = " + ID + ";";
+        
+        
+        List<Funcionario> funcionarios = new ArrayList<>();
+        
+        try {
+            
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            
+            while (rs.next())
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setLogin(rs.getString("login"));
+                funcionario.setSenha(rs.getString("senha"));
+                funcionario.setId(rs.getInt("id"));
+                funcionarios.add(funcionario);
+            }
+        }
+        catch (SQLException ex)
+        {
+            System.out.println("Erro: " + ex);
+        }
+        finally
+        {
+            ConnectionFactory.closeconnection(con, stmt, rs);
+        }
+        
+        return funcionarios;
+    }
+    
     public boolean update(Funcionario funcionario)
     {
         String sql = "UPDATE funcionario SET nome = ?, login = ?, senha = ? where id = ?";

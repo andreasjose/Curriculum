@@ -31,6 +31,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,6 +40,8 @@ public class Login extends javax.swing.JFrame {
         JTSenha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -135,35 +138,42 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_JTLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String login = JTLogin.getText();
-        String senha = JTSenha.getText();
         
-        FuncionarioDAO fun = new FuncionarioDAO();
-        int i = 0;
-        for(Funcionario f : fun.Select())
+        if(JTLogin.getText().equals("") || JTSenha.getText().equals(""))
         {
-            if(f.getLogin().equals(login))
+            JOptionPane.showMessageDialog(rootPane, "Preencha os campos");
+        }
+        else
+        {
+            String login = JTLogin.getText();
+            String senha = JTSenha.getText();
+            FuncionarioDAO fun = new FuncionarioDAO();
+            int i = 0;
+            for(Funcionario f : fun.Select())
             {
-                i = 1;
-                if(f.getSenha().equals(senha))
+                if(f.getLogin().equals(login))
                 {
-                    Menuprincipal menu = new Menuprincipal(f.getNome());
+                    i = 1;
+                    if(f.getSenha().equals(senha))
+                    {
+                        Menuprincipal menu = new Menuprincipal(f.getNome());
                     
-                    menu.setVisible(true);
-                    this.setVisible(false);
-                    break;
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(rootPane, "Senha incorreta");
-                    break;
+                        menu.setVisible(true);
+                        this.setVisible(false);
+                        break;
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(rootPane, "Senha incorreta");
+                        break;
+                    }
                 }
             }
-        }
         
-        if(i == 0)
-        {
-            JOptionPane.showMessageDialog(rootPane, "login incorreto");
+            if(i == 0)
+            {
+                JOptionPane.showMessageDialog(rootPane, "login incorreto");
+            }
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -216,5 +226,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

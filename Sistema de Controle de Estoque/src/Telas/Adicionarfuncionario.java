@@ -5,7 +5,6 @@
  */
 package Telas;
 
-import javax.swing.JOptionPane;
 import model.dao.FuncionarioDAO;
 import sistemacontroleestoque.Funcionario;
 
@@ -15,10 +14,12 @@ import sistemacontroleestoque.Funcionario;
  */
 public class Adicionarfuncionario extends javax.swing.JInternalFrame {
 
+    private javax.swing.JDesktopPane areatra; 
     /**
      * Creates new form NewJInternalFrame
      */
-    public Adicionarfuncionario() {
+    public Adicionarfuncionario(javax.swing.JDesktopPane area) {
+        areatra = area;
         initComponents();
     }
 
@@ -140,25 +141,46 @@ public class Adicionarfuncionario extends javax.swing.JInternalFrame {
         String usuario = jtusuario.getText();
         String senha = jtsenha.getText();
         if(nome.equals("") || usuario.equals("") || senha.equals("")){
-            Mensagem mensagem = new Mensagem();
-            mensagem.getJmensagem().setText("Favor preencher todos os campos!");
+            Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto();
+            areatra.add(mensagem);
             mensagem.setVisible(true);
             
         } else {
-            Funcionario novo = new Funcionario();
-            novo.setNome(nome);
-            novo.setLogin(usuario);
-            novo.setSenha(senha);
-
-            FuncionarioDAO novoDAO = new FuncionarioDAO();
-            novoDAO.save(novo);
+            FuncionarioDAO list = new FuncionarioDAO();
             
-            Mensagem mensagem = new Mensagem();
-            mensagem.getJmensagem().setText("funcionario cadastrado com sucesso!");
+            int verificausuariorepetido = 0;
             
-            jtnome.setText("");
-            jtsenha.setText("");
-            jtusuario.setText("");
+            for(Funcionario f : list.Select())
+            {
+                if(f.getLogin().equals(usuario))
+                {
+                    verificausuariorepetido = 1;
+                }
+            }
+            if(verificausuariorepetido == 0){
+                Funcionario novo = new Funcionario();
+                novo.setNome(nome);
+                novo.setLogin(usuario);
+                novo.setSenha(senha);
+            
+                FuncionarioDAO novoDAO = new FuncionarioDAO();
+                novoDAO.save(novo);
+                    
+                MensagemSucesso mensagem = new MensagemSucesso("funcionario cadastrado com sucesso!");
+                areatra.add(mensagem);
+                mensagem.setVisible(true);
+            
+                jtnome.setText("");
+                jtsenha.setText("");
+                jtusuario.setText("");
+            }
+            else
+            {
+                Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto("Login pertence a outro funcionario");
+                areatra.add(mensagem);
+                mensagem.setVisible(true);
+            }
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

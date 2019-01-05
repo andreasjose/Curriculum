@@ -20,8 +20,7 @@ public class Menuprincipal extends javax.swing.JFrame {
     public Menuprincipal(String nome){
         initComponents();
         
-        Mensagem mensagem = new Mensagem();
-        mensagem.getJmensagem().setText("Bem Vindo! " + nome);
+        MensagemBoasVindas mensagem = new MensagemBoasVindas("Bem vindo " + nome);
         this.nomeusuario = nome;
         
         jDesktopPane1.add(mensagem);
@@ -100,6 +99,11 @@ public class Menuprincipal extends javax.swing.JFrame {
 
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/user_edit.png"))); // NOI18N
         jMenuItem4.setText("Alterar");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/user_delete.png"))); // NOI18N
@@ -117,6 +121,11 @@ public class Menuprincipal extends javax.swing.JFrame {
 
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/basket_add.png"))); // NOI18N
         jMenuItem7.setText("Adicionar");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem7);
 
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/basket_edit.png"))); // NOI18N
@@ -207,7 +216,7 @@ public class Menuprincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Adicionarfuncionario novofuncionario = new Adicionarfuncionario();
+        Adicionarfuncionario novofuncionario = new Adicionarfuncionario(this.jDesktopPane1);
         jDesktopPane1.add(novofuncionario);
         novofuncionario.setVisible(true);
         
@@ -225,6 +234,19 @@ public class Menuprincipal extends javax.swing.JFrame {
         
         System.exit(0);
     }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Alterarfuncionario novofuncionario = new Alterarfuncionario(this.jDesktopPane1);
+        jDesktopPane1.add(novofuncionario);
+        novofuncionario.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        
+        Adicionarproduto produto = new Adicionarproduto();
+        jDesktopPane1.add(produto);
+        produto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
