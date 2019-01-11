@@ -151,6 +151,62 @@ public class ProdutoDAO {
         return produtos;
     }
     
+    public List<Produto> Select(String id)
+    {
+        String sql = "select p.id as pid, p.quantidadecomprada, p.quantidadeestoque, p.precocompra,\n" +
+        "p.precovenda, p.categoria_id, p.descricaoproduto_id ,c.id as cid, c.descricao \n" +
+        "as cdescricao, p.datavalidade, d.id as did, d.descricao as ddescricao \n" +
+        "from produto p \n" +
+        "inner join categoria c on p.categoria_id = c.id\n" +
+        "inner join descricaoproduto d on p.descricaoproduto_id= d.id\n"+
+        "where p.id = " + id +";";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<Produto> produtos = new ArrayList<>();
+        
+        try {
+            
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            
+            while (rs.next())
+            {
+                Produto produto = new Produto();
+                produto.setId(rs.getInt("pid"));
+                produto.setQuantidadecomprada(rs.getInt("quantidadecomprada"));
+                produto.setQuantidadeestoque(rs.getInt("quantidadeestoque"));
+                produto.setPrecocompra(rs.getFloat("precocompra"));
+                produto.setPrecovenda(rs.getFloat("precovenda"));
+                produto.setDatavalidade(rs.getString("datavalidade"));
+                
+                Descricaoproduto desc = new Descricaoproduto();
+                desc.setId(rs.getInt("did"));
+                desc.setDescricao(rs.getString("ddescricao"));
+                
+                produto.setDescricao(desc);
+                
+                Categoria categoria = new Categoria();
+                categoria.setId(rs.getInt("cid"));
+                categoria.setDescricao(rs.getString("cdescricao"));
+                
+                produto.setCategoria(categoria);
+                
+                produtos.add(produto);
+            }
+        }
+        catch (SQLException ex)
+        {
+            System.out.println("Erro: " + ex);
+        }
+        finally
+        {
+            ConnectionFactory.closeconnection(con, stmt, rs);
+        }
+        
+        return produtos;
+    }
+    
     public boolean delete(Produto produto)
     {
         String sql = "DELETE FROM produto where id = ?";

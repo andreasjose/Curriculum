@@ -5,6 +5,7 @@
  */
 package Telas;
 
+import Telas.utilidades.TeclasPermitidasNumeros;
 import java.util.ArrayList;
 import java.util.List;
 import model.dao.FuncionarioDAO;
@@ -26,6 +27,7 @@ public class Alterarfuncionario extends javax.swing.JInternalFrame {
     public Alterarfuncionario(javax.swing.JDesktopPane area) {
         areatra = area;
         initComponents();
+        jtID.setDocument(new TeclasPermitidasNumeros());
     }
     
     public static boolean isNumeric (String s)
@@ -230,7 +232,7 @@ public class Alterarfuncionario extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String num = jtID.getText();
-        if(isNumeric(num))
+        if(!num.equals(""))
         {
             List<Funcionario> funcionarios = new ArrayList<>();
             
@@ -259,12 +261,10 @@ public class Alterarfuncionario extends javax.swing.JInternalFrame {
                 areatra.add(mensagem);
                 mensagem.setVisible(true);
             }
-            
-            
         }
         else
         {
-            Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto("Digite um número");
+            Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto("Insira um ID");
             areatra.add(mensagem);
             mensagem.setVisible(true);
         }

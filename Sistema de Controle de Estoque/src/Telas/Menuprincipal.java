@@ -229,6 +229,9 @@ public class Menuprincipal extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
+        Alterarproduto produto = new Alterarproduto(this.jDesktopPane1);
+        jDesktopPane1.add(produto);
+        produto.setVisible(true);        
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
@@ -248,7 +251,7 @@ public class Menuprincipal extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         
-        Adicionarproduto produto = new Adicionarproduto();
+        Adicionarproduto produto = new Adicionarproduto(this.jDesktopPane1);
         jDesktopPane1.add(produto);
         produto.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed

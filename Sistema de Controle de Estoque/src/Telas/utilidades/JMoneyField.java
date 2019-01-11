@@ -29,7 +29,7 @@ public class JMoneyField extends JFormattedTextField {
      * Creates a new instance of JMoneyField  
      */   
     public JMoneyField() {   
-        this.setHorizontalAlignment( JTextField.HORIZONTAL );   
+        this.setHorizontalAlignment( JTextField.RIGHT );   
         this.setDocument(new MoneyFieldDocument());   
         this.addFocusListener(new MoneyFieldFocusListener());   
         this.setText("0,00");   
@@ -46,7 +46,8 @@ public class JMoneyField extends JFormattedTextField {
         public void focusGained(FocusEvent e) {   
             selectAll();   
         }   
-    }   
+    }
+    
         
     private final class MoneyFieldDocument extends PlainDocument {   
             
@@ -119,6 +120,13 @@ public class JMoneyField extends JFormattedTextField {
                 super.remove(0, getLength());   
                 insertString(0,original,null);   
             }   
-        }   
-    }   
+        }
+        
+    }
+    
+    public String getTextFloat()
+    {
+        String texto = this.getText().replace(".", "");
+        return texto.replace(",", ".");
+    }
 }  
