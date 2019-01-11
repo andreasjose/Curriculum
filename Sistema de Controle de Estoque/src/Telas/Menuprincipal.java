@@ -147,8 +147,10 @@ public class Menuprincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/world.png"))); // NOI18N
         jMenu3.setText("Vendas");
 
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/world_add.png"))); // NOI18N
         jMenuItem11.setText("Adicionar");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,12 +159,15 @@ public class Menuprincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem11);
 
+        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/world_edit.png"))); // NOI18N
         jMenuItem12.setText("Alterar");
         jMenu3.add(jMenuItem12);
 
+        jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/world_delete.png"))); // NOI18N
         jMenuItem13.setText("Excluir");
         jMenu3.add(jMenuItem13);
 
+        jMenuItem14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/zoom.png"))); // NOI18N
         jMenuItem14.setText("Pesquisar");
         jMenu3.add(jMenuItem14);
 
@@ -204,7 +209,7 @@ public class Menuprincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

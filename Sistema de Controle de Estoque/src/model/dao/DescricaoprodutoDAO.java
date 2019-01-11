@@ -86,6 +86,40 @@ public class DescricaoprodutoDAO {
         return descricaos;
     }
     
+    public List<Descricaoproduto> Select(int Categoria_id)
+    {
+        String sql = "SELECT * FROM descricaoproduto where categoria_id = " + Categoria_id +";";
+        
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<Descricaoproduto> descricaos = new ArrayList<>();
+        
+        try {
+            
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            
+            while (rs.next())
+            {
+                Descricaoproduto descricao = new Descricaoproduto();
+                descricao.setDescricao(rs.getString("descricao"));
+                descricao.setId(rs.getInt("id"));
+                descricaos.add(descricao);
+            }
+        }
+        catch (SQLException ex)
+        {
+            System.out.println("Erro: " + ex);
+        }
+        finally
+        {
+            ConnectionFactory.closeconnection(con, stmt, rs);
+        }
+        
+        return descricaos;
+    }
+    
     public boolean update(Descricaoproduto descricao)
     {
         String sql = "UPDATE descricaoproduto SET descricao = ? where id = ?";
