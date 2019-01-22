@@ -21,27 +21,42 @@ Por fim algumas intâncias foram adicionadas ao banco, nas tabelas funcionario, 
 ### Programação <br>
 A aplicação foi desenvolvida em java, utilizando algumas ferramentas encontradas na WEB como por exemplo o JMoneyField uma alteração de um campo especifico para transformar o valor na moeda utilizada que no caso é o real.<br>
 A aplicação é divido em 2 partes: front-end e back-end.<br>
-## Back - end <br>
+### Back - end <br>
 Aqui encontramos a parte com a conexão com o banco de dados, os testes realizados e as classes.<br>
-## Conexão <br>
-<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/Connection.png" alt="conexão"></img><br><br>
-## SQL<br>
-# Insert<br>
-<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/save_funcionario.png" alt="Insert"></img><br><br>
-# update<br>
-<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/update_funcionario.png" alt="update"></img><br><br>
-# select<br>
-<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/select_funcionario.png" alt="select"></img><br><br>
-# delete<br>
-<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/delete_funcionario.png" alt="delete"></img><br><br>
+### Conexão <br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/Connection.png" alt="conexão"></img><br>
+### SQL<br>
+### Insert<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/save_funcionario.png" alt="Insert"></img><br>
+### update<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/update_funcionario.png" alt="update"></img><br>
+### select<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/select_funcionario.png" alt="select"></img><br>
+### delete<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/delete_funcionario.png" alt="delete"></img><br>
 
-## Classes <br>
-<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/funcionario__classe.png" alt="classe funcionario"></img><br><br>
+### Classes <br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/funcionario__classe.png" alt="classe funcionario"></img><br>
 
-## Testes <br>
-<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/teste_funcionario.png" alt="teste da classe funcionario"></img><br><br>
+### Testes <br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/teste_funcionario.png" alt="teste da classe funcionario"></img><br>
 
-## Front - end<br>
+### Front - end<br>
+Foi desenvolvido no formato MDI(Interface de documentos múltiplos) é um método de organização de aplicações gráficas em janelas que residem em uma única janela, a janela principal da aplicação.<br>
+
+### Tela de Login modo de edição<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/Login_tela_modoedicao.png" alt="Tela de login modo de edição"></img><br>
+
+### Tela de Login Run<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/login_run.png" alt="Tela de login run"></img><br>
+
+### Tela Menu principal<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/menu_principal.png" alt="Tela menu principal"></img><br>
+<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/menu_principal_funcionarios.png" alt="Tela menu principal"></img><br>
+<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/Captura%20de%20tela%20de%202019-01-11%2020-50-05.png" alt="Tela menu principal"></img><br>
+
 
 <hr>
 <a href="https://github.com/andreasjose/Curriculum/blob/master/README.md">Retorna</a>
