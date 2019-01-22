@@ -17,5 +17,31 @@ O modelo fisico foi gerado em cima do modelo logico, e foram apricadas algumas a
 
 Por fim algumas intâncias foram adicionadas ao banco, nas tabelas funcionario, produto, descrição do produto e categoria.<br>
 <a href="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/InsertsTabelas.sql">Instâncias</a><br>
+
+### Programação <br>
+A aplicação foi desenvolvida em java, utilizando algumas ferramentas encontradas na WEB como por exemplo o JMoneyField uma alteração de um campo especifico para transformar o valor na moeda utilizada que no caso é o real.<br>
+A aplicação é divido em 2 partes: front-end e back-end.<br>
+## Back - end <br>
+Aqui encontramos a parte com a conexão com o banco de dados, os testes realizados e as classes.<br>
+## Conexão <br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/Connection.png" alt="conexão"></img><br><br>
+## SQL<br>
+# Insert<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/save_funcionario.png" alt="Insert"></img><br><br>
+# update<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/update_funcionario.png" alt="update"></img><br><br>
+# select<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/select_funcionario.png" alt="select"></img><br><br>
+# delete<br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/delete_funcionario.png" alt="delete"></img><br><br>
+
+## Classes <br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/funcionario__classe.png" alt="classe funcionario"></img><br><br>
+
+## Testes <br>
+<img src="https://github.com/andreasjose/Curriculum/blob/master/Sistema%20de%20Controle%20de%20Estoque/SistemadeControledeEstoque/Imagens%20do%20Sistema/teste_funcionario.png" alt="teste da classe funcionario"></img><br><br>
+
+## Front - end<br>
+
 <hr>
 <a href="https://github.com/andreasjose/Curriculum/blob/master/README.md">Retorna</a>
