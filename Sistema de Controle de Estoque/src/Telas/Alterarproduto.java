@@ -26,6 +26,8 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
      */
     private javax.swing.JDesktopPane areatra;
     
+    int IDselecionado; //erro se a pessoa alterar o campo ID e clicar em alterar
+    
     public Alterarproduto(javax.swing.JDesktopPane area) {
         areatra = area;
         initComponents();
@@ -63,7 +65,8 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
         jMoneyField2 = new Telas.utilidades.JMoneyField();
         jLabel8 = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setClosable(true);
         setTitle("Alterar Produto");
@@ -79,9 +82,15 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Escolha um Item>" }));
         jComboBox1.setEnabled(false);
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField2.setEnabled(false);
 
         jCheckBox1.setText("Nova Categoria");
@@ -95,9 +104,10 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Produto");
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Escolha um Item>" }));
         jComboBox2.setEnabled(false);
 
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setEnabled(false);
 
         jCheckBox2.setText("Novo Produto");
@@ -135,8 +145,23 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
         jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jFormattedTextField1.setEnabled(false);
 
-        jButton2.setText("Alterar");
-        jButton2.setEnabled(false);
+        jButton3.setText("Alterar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 43, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,8 +196,7 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(98, 98, 98)
-                                .addComponent(jLabel7))
-                            .addComponent(jLabel8))
+                                .addComponent(jLabel7)))
                         .addGap(0, 6, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -182,12 +206,15 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField5)
-                            .addComponent(jMoneyField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jMoneyField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,8 +262,11 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -265,6 +295,7 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
         
             if(produtos.size() == 1)
             {
+                IDselecionado = Integer.parseInt(num);
                 int idcategoria;
                 idcategoria = preenchecategoria(produtos);
                 
@@ -285,7 +316,6 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
                 jFormattedTextField1.enable(true);
                 jFormattedTextField1.setText(produtos.get(0).getDatavalidade().replace("-", "/"));
                 
-                jButton2.enable(true);
             }
             else
             {
@@ -328,10 +358,103 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        String Categoria = jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
+        
+        String nome = jComboBox2.getItemAt(0);
+        jComboBox2.removeAllItems();
+        jComboBox2.addItem(nome);
+        
+        ProdutoDAO dao = new ProdutoDAO();
+        for(Produto p : dao.Select())
+        {
+            if(p.getCategoria().getDescricao().equals(Categoria) && !p.getDescricao().getDescricao().equals(nome))
+            {
+                jComboBox2.addItem(p.getDescricao().getDescricao());
+            }
+        }
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int erronum = campospreenchidos();
+        if(erronum == 0)
+        {
+            Produto produto = new Produto();
+            produto.setCategoria(verificacategoria());
+            produto.setDescricao(verificadescricao());
+            
+            produto.setQuantidadecomprada(Integer.parseInt((jTextField4.getText())));
+            produto.setQuantidadeestoque(Integer.parseInt(jTextField5.getText()));
+            produto.setPrecocompra(Float.parseFloat(jMoneyField1.getTextFloat()));
+            produto.setPrecovenda(Float.parseFloat(jMoneyField2.getTextFloat()));
+            produto.setDatavalidade(jFormattedTextField1.getText().replace("/", "-"));
+            
+            produto.setId(IDselecionado);
+            
+            ProdutoDAO dao = new ProdutoDAO();
+            dao.update(produto);
+            
+            MensagemSucesso mensagem = new MensagemSucesso("Produto Alterado com sucesso");
+            areatra.add(mensagem);
+            mensagem.setVisible(true);
+        }
+        else
+        {
+            String text;
+            if(erronum == 1)
+            {
+                text = "Insira a categoria";
+            }
+            else
+            {
+                if(erronum == 2)
+                {
+                    text = "Insira o nome do produto";
+                }
+                else
+                {
+                    if(erronum == 3)
+                    {
+                        text = "Insira a Quantidade Comprada";
+                    }
+                    else
+                    {
+                        if(erronum == 4)
+                        {
+                            text = "Insira a Quantidade em Estoque";
+                        }
+                        else
+                        {
+                            if(erronum == 5)
+                            {
+                                text = "Insira o Preço de compra";
+                            }
+                            else
+                            {
+                                if(erronum == 6)
+                                {
+                                    text = "Insira o Preço de Venda";
+                                }
+                                else
+                                {
+                                    text = "Insira a data";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto(text);
+            areatra.add(mensagem);
+            mensagem.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -348,6 +471,7 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
     private Telas.utilidades.JMoneyField jMoneyField1;
     private Telas.utilidades.JMoneyField jMoneyField2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -391,6 +515,101 @@ public class Alterarproduto extends javax.swing.JInternalFrame {
                 jComboBox2.addItem(p.getDescricao().getDescricao());
             }
         }
+    }
+    
+        private int campospreenchidos()
+    {
+        int indexbox1 = jComboBox1.getSelectedIndex();
+        int indexbox2 = jComboBox2.getSelectedIndex();
+        if(((jComboBox1.getItemAt(indexbox1).equals("<Escolha um item>") && !jCheckBox1.isSelected()) || (jCheckBox1.isSelected() && jTextField2.getText().equals(""))))
+        {
+            return 1;
+        }
+        
+        if(((jComboBox2.getItemAt(indexbox2).equals("<Escolha um item>") && !jCheckBox2.isSelected()) || (jCheckBox2.isSelected() && jTextField3.getText().equals(""))))
+        {
+            return 2;
+        }
+        
+        if(jTextField4.getText().equals(""))
+        {
+            return 3;
+        }
+        
+        if(jTextField5.getText().equals(""))
+        {
+            return 4;
+        }
+        
+        if(jMoneyField1.getText().equals(""))
+        {
+            return 5;
+        }
+        
+        if(jMoneyField2.getText().equals(""))
+        {
+            return 6;
+        }
+        
+        if(jFormattedTextField1.getText().equals("    /  /  "))
+        {
+            return 7;
+        }
+        return 0;
+    }
+        
+    private Categoria verificacategoria()
+    {
+        Categoria cat = new Categoria();
+        if(jCheckBox1.isSelected())
+        {
+            CategoriaDAO dao = new CategoriaDAO();
+            cat.setDescricao(jTextField2.getText());
+            dao.save(cat);
+        }
+        else
+        {
+            cat.setDescricao(jComboBox1.getItemAt(jComboBox1.getSelectedIndex()));
+        }
+            
+        CategoriaDAO dao = new CategoriaDAO();
+        for(Categoria c : dao.Select())
+        {
+            if(c.getDescricao().equals(cat.getDescricao()))
+            {
+                cat.setId(c.getId());
+                break;
+            }
+        }
+        return cat;
+    }
+    
+    private Descricaoproduto verificadescricao()
+    {
+        Descricaoproduto des = new Descricaoproduto();
+        
+        if(jCheckBox2.isSelected())
+        {
+            DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
+            des.setDescricao(jTextField3.getText());
+            dao.save(des);
+        }
+        else
+        {
+            des.setDescricao(jComboBox2.getItemAt(jComboBox2.getSelectedIndex()));
+        }
+        
+        DescricaoprodutoDAO dao = new DescricaoprodutoDAO();
+        
+        for(Descricaoproduto d : dao.Select())
+        {
+            if(d.getDescricao().equals(des.getDescricao()))
+            {
+                des.setId(d.getId());
+                break;
+            }
+        }
+        return des;
     }
 
 }

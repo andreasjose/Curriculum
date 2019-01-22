@@ -180,7 +180,7 @@ public class Alterarfuncionario extends javax.swing.JInternalFrame {
         
         if(jTextField2.getText().equals("") || jTextField3.getText().equals("") || jTextField4.getText().equals(""))
         {
-            Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto("Funcionario inesistente");
+            Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto("Preencha todos os campos");
             areatra.add(mensagem);
             mensagem.setVisible(true);
         }

@@ -294,7 +294,8 @@ public class Adicionarproduto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(campospreenchidos() == 0)
+        int erronum = campospreenchidos();
+        if(erronum == 0)
         {
             Produto produto = new Produto();
             produto.setCategoria(verificacategoria());
@@ -312,11 +313,57 @@ public class Adicionarproduto extends javax.swing.JInternalFrame {
             MensagemSucesso mensagem = new MensagemSucesso("Produto Adicionado com sucesso");
             areatra.add(mensagem);
             mensagem.setVisible(true);
+            
         }
         else
         {
-            System.out.println("Erro!");
-            System.out.println(campospreenchidos());
+            String text;
+            if(erronum == 1)
+            {
+                text = "Insira a categoria";
+            }
+            else
+            {
+                if(erronum == 2)
+                {
+                    text = "Insira o nome do produto";
+                }
+                else
+                {
+                    if(erronum == 3)
+                    {
+                        text = "Insira a Quantidade Comprada";
+                    }
+                    else
+                    {
+                        if(erronum == 4)
+                        {
+                            text = "Insira a Quantidade em Estoque";
+                        }
+                        else
+                        {
+                            if(erronum == 5)
+                            {
+                                text = "Insira o Preço de compra";
+                            }
+                            else
+                            {
+                                if(erronum == 6)
+                                {
+                                    text = "Insira o Preço de Venda";
+                                }
+                                else
+                                {
+                                    text = "Insira a data";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            Mensagemcampoincompleto mensagem = new Mensagemcampoincompleto(text);
+            areatra.add(mensagem);
+            mensagem.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -399,7 +446,7 @@ public class Adicionarproduto extends javax.swing.JInternalFrame {
             return 6;
         }
         
-        if(jFormattedTextField3.getText().equals(""))
+        if(jFormattedTextField3.getText().equals("    /  /  "))
         {
             return 7;
         }

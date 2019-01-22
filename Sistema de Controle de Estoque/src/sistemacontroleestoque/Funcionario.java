@@ -7,7 +7,7 @@ package sistemacontroleestoque;
 
 /**
  *
- * @author usuario
+ * @author Andreas
  */
 public class Funcionario {
     private int id;
