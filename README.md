@@ -17,5 +17,3 @@ A principal ideia é criar um sistema que controle o estoque de um supermercado,
 Algoritmos desenvolvidos em assembly ou seja em uma linguagem de baixo nivel<br>
 ### Algoritmo do Triangulo
 <a href="https://github.com/andreasjose/Curriculum/tree/master/Programacao_assembly">Sobre</a>
-
- <a href="https://github.com/andreasjose/Curriculum/tree/master/Sistema%20de%20Controle%20de%20Estoque">Sobre</a>
